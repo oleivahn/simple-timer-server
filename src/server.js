@@ -11,7 +11,8 @@ const app = express();
 const port = 5000;
 
 // Use Middleware
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
+app.use(express.json());
 
 // This allows me to run the react app locally and make requests to the server. Cors issue otherwise
 app.use(
