@@ -1,0 +1,21 @@
+[
+  {
+    "_id": "7966e34b-13ca-42e9-8498-cd6e12dc8142",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:5000/workout",
+    "url": "http://localhost:5000/workout",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2023-05-02T05:41:10.093Z",
+    "modified": "2023-05-02T05:41:10.093Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\r\n  \"title\": \"test-name\",\r\n  \"body\": \"test-body\"\r\n}",
+      "form": []
+    },
+    "tests": []
+  }
+]
