@@ -1,4 +1,5 @@
 const express = require("express");
+require("dotenv").config();
 const mongoose = require("mongoose");
 const WorkoutModel = require("./models/Workout");
 
@@ -37,9 +38,7 @@ app.post("/workout", async (req, res) => {
 
 // // connect to the database and start the server
 mongoose
-  .connect(
-    "mongodb+srv://leivao:TgkzKJz5VVhR0LsH@simple-workouts-cluster.ppkmo2t.mongodb.net/?retryWrites=true&w=majority"
-  )
+  .connect(process.env.MONGO_URL || "mongodb://localhost:27017/workout")
   .then(() => {
     console.log("Connected to the database!");
 
