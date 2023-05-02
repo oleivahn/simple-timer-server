@@ -1,15 +1,28 @@
 // create a server and listen for connections on port 5000
 const express = require("express");
-
+const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const cors = require("cors");
 
 const app = express();
 const port = 5000;
 
+const cors = require("cors");
+
+// // connect to the database
+// const db = mongoose.connect(
+//   "mongodb+srv://leivao:UdHGtjetWgliwMYK@simple-workouts-cluster.ppkmo2t.mongodb.net/?retryWrites=true&w=majority",
+//   {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   }
+// );
+
 const data = require("./data.json");
 
+// Middleware
 app.use(bodyParser.json());
+
+// This allows me to run the react app locally and make requests to the server. Cors issue otherwise
 app.use(
   cors({
     origin: "*",
