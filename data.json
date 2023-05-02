@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "exercise_id": "1",
+    "user_id": "1",
+    "exercise": "Chest Press",
+    "sets": "3",
+    "reps": "10",
+    "weight": "100",
+    "typeOfWeight": "lbs",
+    "date": "2019-01-01",
+    "notes": "I did this exercise"
+  },
+  {
+    "id": "2",
+    "exercise_id": "2",
+    "user_id": "1",
+    "exercise": "Pull Ups",
+    "sets": "2",
+    "reps": "4",
+    "weight": "0",
+    "typeOfWeight": "Body Weight",
+    "date": "2023-01-02",
+    "notes": "Damn Pull Ups..."
+  },
+  {
+    "id": "3",
+    "exercise_id": "3",
+    "user_id": "1",
+    "exercise": "Chest Press",
+    "sets": "5",
+    "reps": "5",
+    "weight": "45",
+    "typeOfWeight": "Plates",
+    "date": "2023-01-03",
+    "notes": "Round 2 almost killed me, I need to stop earlier next time..."
+  },
+  {
+    "id": "4",
+    "exercise_id": "3",
+    "user_id": "1",
+    "exercise": "Arm Curls",
+    "sets": "5",
+    "reps": "5",
+    "weight": "45",
+    "typeOfWeight": "Plates",
+    "date": "2023-01-03",
+    "notes": "Round 2 almost killed me, I need to stop earlier next time..."
+  },
+  {
+    "id": "5",
+    "exercise_id": "3",
+    "user_id": "1",
+    "exercise": "Wide Grip Pull Ups",
+    "sets": "5",
+    "reps": "5",
+    "weight": "45",
+    "typeOfWeight": "Plates",
+    "date": "2023-01-03",
+    "notes": "Round 2 almost killed me, I need to stop earlier next time..."
+  }
+]
