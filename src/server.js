@@ -6,9 +6,11 @@ const WorkoutModel = require("./models/Workout");
 const { color, log } = require("console-log-colors");
 
 // Middleware
-const bodyParser = require("body-parser");
 const cors = require("cors");
 const data = require("./data.json");
+const {
+  createWorkoutController,
+} = require("./controllers/createWorkoutController");
 
 const app = express();
 const port = 5000;
@@ -33,18 +35,10 @@ app.get("/api", (req, res) => res.send(data));
 
 app.post("/api", (req, res) => res.send("HELLO WORLD!"));
 
-app.post("/workout", async (req, res) => {
-  const workout = new WorkoutModel({
-    title: req.body.title,
-    body: req.body.body,
-  });
+// POST EXAMPLE
+app.post("/workout", createWorkoutController);
 
-  const createWorkout = await workout.save();
-
-  res.json(createWorkout);
-});
-
-// // connect to the database and start the server
+// Connect to the database and start the server
 mongoose
   .connect(process.env.MONGO_URL || "mongodb://localhost:27017/workout")
   .then(() => {
@@ -53,7 +47,10 @@ mongoose
 
     // START THE SERVER
     app.listen(port, () =>
-      console.log(color.yellowBright(`Server running on port ${port}`))
+      console.log(
+        color.magentaBright(`Server running on port: `) +
+          color.yellow(`${port}`)
+      )
     );
   })
   .catch((err) => {
