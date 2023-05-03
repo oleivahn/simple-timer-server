@@ -15,10 +15,11 @@ const port = 5000;
 // app.use(bodyParser.json());
 app.use(express.json());
 
-// TITLE: CORS
+// TITLE: CORS {
 // This allows me to run the react app locally and make requests to the server. Cors issue otherwise
 // Desc: Basically saying, anyone on this local host(your pc) can make requests to the server (that is also on the same pc. 2 Repos running locally)
 // By default, the server will only accept requests from itself (port:5000 to 5000) so we need to allow it to accept requests from other places (react-app port: 3000 so port:3000 to 5000) by allowing cors
+// }
 app.use(
   cors({
     origin: "*",
