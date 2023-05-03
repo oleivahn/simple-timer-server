@@ -3,6 +3,8 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const WorkoutModel = require("./models/Workout");
 
+const { color, log } = require("console-log-colors");
+
 // Middleware
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -46,12 +48,20 @@ app.post("/workout", async (req, res) => {
 mongoose
   .connect(process.env.MONGO_URL || "mongodb://localhost:27017/workout")
   .then(() => {
-    console.log("Connected to the database!");
+    // log.cyan("Connecting to the database!");
+    console.log(color.cyanBright("Connected to the database!"));
 
     // START THE SERVER
-    app.listen(port, () => console.log(`Server running on port ${port}`));
+    app.listen(port, () =>
+      console.log(color.yellowBright(`Server running on port ${port}`))
+    );
   })
   .catch((err) => {
-    console.log("Cannot connect to the database!", err);
+    console.log(
+      color.red(
+        "Cannot connect to the database!, check your config files maybe"
+      )
+    );
+    console.log(err);
     process.exit();
   });
