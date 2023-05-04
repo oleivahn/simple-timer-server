@@ -1,19 +1,33 @@
 [
   {
-    "_id": "06fb6b95-6ddc-4e49-9e78-d4fc50e738f9",
+    "_id": "0a3c92f5-8c25-481a-8a3b-ee96471781f4",
     "colId": "7ab7516c-7f30-4885-b020-25ec3351f354",
     "containerId": "",
-    "name": "Basic POST request",
+    "name": "Get the last record",
+    "url": "http://localhost:5000/startworkout",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2023-05-04T08:05:37.290Z",
+    "modified": "2023-05-04T08:05:37.290Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "2104f127-5827-4d75-9830-c90de9a7cbf7",
+    "colId": "7ab7516c-7f30-4885-b020-25ec3351f354",
+    "containerId": "",
+    "name": "Posting real data",
     "url": "http://localhost:5000/workout",
     "method": "POST",
     "sortNum": 10000,
-    "created": "2023-05-02T05:47:12.339Z",
-    "modified": "2023-05-02T06:26:35.054Z",
+    "created": "2023-05-04T08:05:45.442Z",
+    "modified": "2023-05-04T08:08:23.578Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"title\": \"after dotenv -1\",\n  \"body\": \"did DOTENV work?\"\n}",
+      "raw": "{\n  \"user\": \"Omar Leiva\",\n  \"workout\": \"Chest and Back\",\n  \"date\": \"2019-01-01\",\n  \"values\": [\n    {\n      \"exercise\": \"Chest Press\",\n      \"sets\": \"3\",\n      \"reps\": \"10\",\n      \"weight\": \"100\",\n      \"typeOfWeight\": \"lbs\",\n      \"notes\": \"I did this exercise\",\n      \"timeToExecute\": \"1:00\"\n    },\n    {\n      \"exercise\": \"Pull Ups\",\n      \"sets\": \"2\",\n      \"reps\": \"4\",\n      \"weight\": \"0\",\n      \"typeOfWeight\": \"Body Weight\",\n      \"notes\": \"Damn Pull Ups...\",\n      \"timeToExecute\": \"1:00\"\n    },\n    {\n      \"exercise\": \"Chest Press\",\n      \"sets\": \"5\",\n      \"reps\": \"5\",\n      \"weight\": \"45\",\n      \"typeOfWeight\": \"Plates\",\n      \"notes\": \"Round 2 almost killed me, I need to stop earlier next time...\",\n      \"timeToExecute\": \"1:00\"\n    },\n    {\n      \"exercise\": \"Arm Curls\",\n      \"sets\": \"5\",\n      \"reps\": \"5\",\n      \"weight\": \"45\",\n      \"typeOfWeight\": \"Plates\",\n      \"notes\": \"Round 2 almost killed me, I need to stop earlier next time...\",\n      \"timeToExecute\": \"1:00\"\n    },\n    {\n      \"exercise\": \"Wide Grip Pull Ups\",\n      \"sets\": \"5\",\n      \"reps\": \"5\",\n      \"weight\": \"45\",\n      \"typeOfWeight\": \"Plates\",\n      \"notes\": \"Round 2 almost killed me, I need to stop earlier next time...\",\n      \"timeToExecute\": \"1:00\"\n    },\n    {\n      \"exercise\": \"Rest\",\n      \"sets\": \"\",\n      \"reps\": \"\",\n      \"weight\": \"\",\n      \"typeOfWeight\": \"\",\n      \"notes\": \"Resting...\",\n      \"timeToExecute\": \"1:00\"\n    }\n  ]\n}",
       "form": []
     },
     "tests": []

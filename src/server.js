@@ -1,27 +1,28 @@
 const express = require("express");
-require("dotenv").config();
 const mongoose = require("mongoose");
-const WorkoutModel = require("./models/Workout");
+const { color } = require("console-log-colors");
+require("dotenv").config();
 
-const { color, log } = require("console-log-colors");
-
-// Middleware
 const cors = require("cors");
 const data = require("./testData/chestAndBack.json");
+
 const {
   createWorkoutController,
 } = require("./controllers/createWorkoutController");
+const {
+  startWorkoutController,
+} = require("./controllers/startWorkoutController");
+// ==================== DONE IMPORTS ====================
 
 const app = express();
 const port = 5000;
 
-// Use Middleware
-// app.use(bodyParser.json());
+// Section: MIDDLEWARE
 app.use(express.json());
 
-// TITLE: CORS {
-// This allows me to run the react app locally and make requests to the server. Cors issue otherwise
-// Desc: Basically saying, anyone on this local host(your pc) can make requests to the server (that is also on the same pc. 2 Repos running locally)
+// CORS {
+// Desc: This allows me to run the react app locally and make requests to the server. Cors issue otherwise
+// Basically saying, anyone on this local host(your pc) can make requests to the server (that is also on the same pc. 2 Repos running locally)
 // By default, the server will only accept requests from itself (port:5000 to 5000) so we need to allow it to accept requests from other places (react-app port: 3000 so port:3000 to 5000) by allowing cors
 // }
 app.use(
@@ -30,19 +31,16 @@ app.use(
   })
 );
 
-// app.get("/api", (req, res) => res.send("Hello World!"));
+// Section: ROUTES
 app.get("/api", (req, res) => res.send(data));
+app.get("/startworkout", startWorkoutController); // GET EXAMPLEs
+app.post("/workout", createWorkoutController); // POST EXAMPLE
 
-app.post("/api", (req, res) => res.send("HELLO WORLD!"));
-
-// POST EXAMPLE
-app.post("/workout", createWorkoutController);
-
-// Connect to the database and start the server
+// ==================== START SERVER ====================
+// Section: Connect to the database and start the server
 mongoose
   .connect(process.env.MONGO_URL || "mongodb://localhost:27017/workout")
   .then(() => {
-    // log.cyan("Connecting to the database!");
     console.log(color.cyanBright("Connected to the database!"));
 
     // START THE SERVER

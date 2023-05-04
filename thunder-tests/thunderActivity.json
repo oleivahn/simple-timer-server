@@ -1,28 +1,9 @@
 [
   {
-    "_id": "7966e34b-13ca-42e9-8498-cd6e12dc8142",
-    "colId": "history",
-    "containerId": "",
-    "name": "http://localhost:5000/workout",
-    "url": "http://localhost:5000/workout",
-    "method": "POST",
-    "sortNum": 0,
-    "created": "2023-05-02T05:41:10.093Z",
-    "modified": "2023-05-03T09:20:19.792Z",
-    "headers": [],
-    "params": [],
-    "body": {
-      "type": "json",
-      "raw": "{\n  \"title\": \"test-hello\",\n  \"body\": \"test-body-hello\"\n}",
-      "form": []
-    },
-    "tests": []
-  },
-  {
     "_id": "26b2fac1-cf3e-4a82-a335-b21167e3bfba",
     "colId": "history",
     "containerId": "",
-    "name": "http://localhost:5000/workout Copy",
+    "name": "Posting real data",
     "url": "http://localhost:5000/workout",
     "method": "POST",
     "sortNum": 0,
@@ -35,6 +16,20 @@
       "raw": "{\r\n  \"user\": \"Omar Leiva\",\r\n  \"workout\": \"Chest and Back\",\r\n  \"date\": \"2019-01-01\",\r\n  \"values\": [\r\n    {\r\n      \"exercise\": \"Chest Press\",\r\n      \"sets\": \"3\",\r\n      \"reps\": \"10\",\r\n      \"weight\": \"100\",\r\n      \"typeOfWeight\": \"lbs\",\r\n      \"notes\": \"I did this exercise\",\r\n      \"timeToExecute\": \"1:00\"\r\n    },\r\n    {\r\n      \"exercise\": \"Pull Ups\",\r\n      \"sets\": \"2\",\r\n      \"reps\": \"4\",\r\n      \"weight\": \"0\",\r\n      \"typeOfWeight\": \"Body Weight\",\r\n      \"notes\": \"Damn Pull Ups...\",\r\n      \"timeToExecute\": \"1:00\"\r\n    },\r\n    {\r\n      \"exercise\": \"Chest Press\",\r\n      \"sets\": \"5\",\r\n      \"reps\": \"5\",\r\n      \"weight\": \"45\",\r\n      \"typeOfWeight\": \"Plates\",\r\n      \"notes\": \"Round 2 almost killed me, I need to stop earlier next time...\",\r\n      \"timeToExecute\": \"1:00\"\r\n    },\r\n    {\r\n      \"exercise\": \"Arm Curls\",\r\n      \"sets\": \"5\",\r\n      \"reps\": \"5\",\r\n      \"weight\": \"45\",\r\n      \"typeOfWeight\": \"Plates\",\r\n      \"notes\": \"Round 2 almost killed me, I need to stop earlier next time...\",\r\n      \"timeToExecute\": \"1:00\"\r\n    },\r\n    {\r\n      \"exercise\": \"Wide Grip Pull Ups\",\r\n      \"sets\": \"5\",\r\n      \"reps\": \"5\",\r\n      \"weight\": \"45\",\r\n      \"typeOfWeight\": \"Plates\",\r\n      \"notes\": \"Round 2 almost killed me, I need to stop earlier next time...\",\r\n      \"timeToExecute\": \"1:00\"\r\n    },\r\n    {\r\n      \"exercise\": \"Rest\",\r\n      \"sets\": \"\",\r\n      \"reps\": \"\",\r\n      \"weight\": \"\",\r\n      \"typeOfWeight\": \"\",\r\n      \"notes\": \"Resting...\",\r\n      \"timeToExecute\": \"1:00\"\r\n    }\r\n  ]\r\n}",
       "form": []
     },
+    "tests": []
+  },
+  {
+    "_id": "e0a7e1b3-fd16-47ed-b059-0a20299b9b05",
+    "colId": "history",
+    "containerId": "",
+    "name": "Get the last record",
+    "url": "http://localhost:5000/startworkout",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-05-02T05:41:10.093Z",
+    "modified": "2023-05-04T07:55:19.211Z",
+    "headers": [],
+    "params": [],
     "tests": []
   }
 ]
