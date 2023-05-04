@@ -14,6 +14,7 @@ const {
 } = require("./controllers/startWorkoutController");
 // ==================== DONE IMPORTS ====================
 // TEST PUSH
+// Section: SETUP
 
 const app = express();
 const port = 5000;
