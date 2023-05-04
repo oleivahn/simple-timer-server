@@ -10,4 +10,4 @@ May 4th, 2023
 [] Find out how to `protect the .env` files on... is it github? or on the deployment site? or both?
 
 <br>
-<br>
+[] Maybe add authentication next?
