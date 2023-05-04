@@ -1,14 +1,6 @@
-###
-GET http://localhost:5000/api/
-
-
-### Creating a new entry workout
-POST http://localhost:5000/workout/
-Content-Type: application/json
-
 {
   "user": "Omar Leiva",
-  "workout": "Chest and Back II",
+  "workout": "Chest and Back",
   "date": "2019-01-01",
   "values": [
     {

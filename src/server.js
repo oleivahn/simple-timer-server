@@ -7,7 +7,7 @@ const { color, log } = require("console-log-colors");
 
 // Middleware
 const cors = require("cors");
-const data = require("./data.json");
+const data = require("./testData/chestAndBack.json");
 const {
   createWorkoutController,
 } = require("./controllers/createWorkoutController");

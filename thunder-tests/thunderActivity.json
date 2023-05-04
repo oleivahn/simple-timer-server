@@ -17,5 +17,24 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "26b2fac1-cf3e-4a82-a335-b21167e3bfba",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:5000/workout Copy",
+    "url": "http://localhost:5000/workout",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2023-05-02T05:41:10.093Z",
+    "modified": "2023-05-04T07:32:50.208Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\r\n  \"user\": \"Omar Leiva\",\r\n  \"workout\": \"Chest and Back\",\r\n  \"date\": \"2019-01-01\",\r\n  \"values\": [\r\n    {\r\n      \"exercise\": \"Chest Press\",\r\n      \"sets\": \"3\",\r\n      \"reps\": \"10\",\r\n      \"weight\": \"100\",\r\n      \"typeOfWeight\": \"lbs\",\r\n      \"notes\": \"I did this exercise\",\r\n      \"timeToExecute\": \"1:00\"\r\n    },\r\n    {\r\n      \"exercise\": \"Pull Ups\",\r\n      \"sets\": \"2\",\r\n      \"reps\": \"4\",\r\n      \"weight\": \"0\",\r\n      \"typeOfWeight\": \"Body Weight\",\r\n      \"notes\": \"Damn Pull Ups...\",\r\n      \"timeToExecute\": \"1:00\"\r\n    },\r\n    {\r\n      \"exercise\": \"Chest Press\",\r\n      \"sets\": \"5\",\r\n      \"reps\": \"5\",\r\n      \"weight\": \"45\",\r\n      \"typeOfWeight\": \"Plates\",\r\n      \"notes\": \"Round 2 almost killed me, I need to stop earlier next time...\",\r\n      \"timeToExecute\": \"1:00\"\r\n    },\r\n    {\r\n      \"exercise\": \"Arm Curls\",\r\n      \"sets\": \"5\",\r\n      \"reps\": \"5\",\r\n      \"weight\": \"45\",\r\n      \"typeOfWeight\": \"Plates\",\r\n      \"notes\": \"Round 2 almost killed me, I need to stop earlier next time...\",\r\n      \"timeToExecute\": \"1:00\"\r\n    },\r\n    {\r\n      \"exercise\": \"Wide Grip Pull Ups\",\r\n      \"sets\": \"5\",\r\n      \"reps\": \"5\",\r\n      \"weight\": \"45\",\r\n      \"typeOfWeight\": \"Plates\",\r\n      \"notes\": \"Round 2 almost killed me, I need to stop earlier next time...\",\r\n      \"timeToExecute\": \"1:00\"\r\n    },\r\n    {\r\n      \"exercise\": \"Rest\",\r\n      \"sets\": \"\",\r\n      \"reps\": \"\",\r\n      \"weight\": \"\",\r\n      \"typeOfWeight\": \"\",\r\n      \"notes\": \"Resting...\",\r\n      \"timeToExecute\": \"1:00\"\r\n    }\r\n  ]\r\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]

@@ -4,8 +4,10 @@ const Schema = mongoose.Schema;
 // const ObjectId = Schema.ObjectId;
 
 const WorkoutSchema = new Schema({
-  title: String,
-  body: String,
+  user: String,
+  workout: String,
+  date: String,
+  values: { type: Array, default: [] },
 });
 
 const WorkoutModel = mongoose.model("Workout", WorkoutSchema);
