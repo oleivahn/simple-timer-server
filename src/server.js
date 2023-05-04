@@ -12,7 +12,7 @@ const {
 const {
   startWorkoutController,
 } = require("./controllers/startWorkoutController");
-// ==================== DONE IMPORTS ====================
+// ==================== IMPORTS FINISHED ====================
 
 const app = express();
 const port = 5000;
