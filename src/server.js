@@ -54,20 +54,19 @@ app.get("/", (req, res) => {
   res.send("Auth page");
 });
 
+// TODO: SWAP THIS TO KEEP TESTING THE FULL ENDPOINT
+// app.get("/api", startWorkoutController);
+
 app.get("/api", (req, res) => {
   console.log("api hit");
-  console.log("Request: ", req);
+  console.log("Request: ", req.headers);
 
   res.send(data);
 });
 
 app.get("/home", (req, res) => res.send("HOME"));
 
-app.get(
-  "/startworkout",
-  guard.check(["read:workouts"]),
-  startWorkoutController
-); // GET EXAMPLEs
+app.get("/startworkout", startWorkoutController); // GET EXAMPLEs
 
 app.post("/workout", createWorkoutController); // POST EXAMPLE
 
