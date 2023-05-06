@@ -1,7 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const { color } = require("console-log-colors");
+const { auth } = require("express-openid-connect");
 require("dotenv").config();
+const { color } = require("console-log-colors");
 
 const cors = require("cors");
 const data = require("./testData/chestAndBack.json");
@@ -17,6 +18,16 @@ const {
 const app = express();
 const port = 5000;
 
+// Config Auth0
+const config = {
+  authRequired: false,
+  auth0Logout: true,
+  secret: process.env.SECRET,
+  baseURL: process.env.BASE_URL,
+  clientID: process.env.CLIENT_ID,
+  issuerBaseURL: process.env.ISSUER_BASE_URL,
+};
+
 // Section: MIDDLEWARE
 app.use(express.json());
 
@@ -31,8 +42,27 @@ app.use(
   })
 );
 
+// auth router attaches /login, /logout, and /callback routes to the baseURL
+app.use(auth(config));
+
 // Section: ROUTES
+// req.isAuthenticated is provided from the auth router
+app.get("/", (req, res) => {
+  console.log(req.oidc.isAuthenticated());
+  console.log(req.oidc.user);
+
+  // Send back the auth data
+  res.send(
+    req.oidc.isAuthenticated()
+      ? `${JSON.stringify(req.oidc.isAuthenticated())} ${JSON.stringify(
+          req.oidc.user
+        )}`
+      : "Logged out"
+  );
+});
+
 app.get("/api", (req, res) => res.send(data));
+app.get("/home", (req, res) => res.send("HOME"));
 app.get("/startworkout", startWorkoutController); // GET EXAMPLEs
 app.post("/workout", createWorkoutController); // POST EXAMPLE
 
