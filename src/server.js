@@ -1,7 +1,11 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const { auth } = require("express-openid-connect");
 require("dotenv").config();
+
+const { auth } = require("express-oauth2-jwt-bearer");
+const { oAuth } = require("./middleware/oAuth");
+const guard = require("express-jwt-permissions")();
+
 const { color } = require("console-log-colors");
 
 const cors = require("cors");
@@ -19,14 +23,12 @@ const app = express();
 const port = 5000;
 
 // Config Auth0
-const config = {
-  authRequired: false,
-  auth0Logout: true,
+const jwtCheck = auth({
   secret: process.env.SECRET,
-  baseURL: process.env.BASE_URL,
-  clientID: process.env.CLIENT_ID,
+  audience: process.env.AUDIENCE,
   issuerBaseURL: process.env.ISSUER_BASE_URL,
-};
+  tokenSigningAlg: process.env.TOKEN_SINGNING_ALGORITHM,
+});
 
 // Section: MIDDLEWARE
 app.use(express.json());
@@ -42,29 +44,35 @@ app.use(
   })
 );
 
-// auth router attaches /login, /logout, and /callback routes to the baseURL
-app.use(auth(config));
+// enforce on all endpoints
+app.use(jwtCheck);
+// app.use(oAuth);
 
 // Section: ROUTES
 // req.isAuthenticated is provided from the auth router
 app.get("/", (req, res) => {
-  console.log(req.oidc.isAuthenticated());
-  console.log(req.oidc.user);
-
-  // Send back the auth data
-  res.send(
-    req.oidc.isAuthenticated()
-      ? `${JSON.stringify(req.oidc.isAuthenticated())} ${JSON.stringify(
-          req.oidc.user
-        )}`
-      : "Logged out"
-  );
+  res.send("Auth page");
 });
 
-app.get("/api", (req, res) => res.send(data));
+app.get("/api", (req, res) => {
+  console.log("api hit");
+  console.log("Request: ", req);
+
+  res.send(data);
+});
+
 app.get("/home", (req, res) => res.send("HOME"));
-app.get("/startworkout", startWorkoutController); // GET EXAMPLEs
+
+app.get(
+  "/startworkout",
+  guard.check(["read:workouts"]),
+  startWorkoutController
+); // GET EXAMPLEs
+
 app.post("/workout", createWorkoutController); // POST EXAMPLE
+
+// ATTEMPTING TO AUTHORIZE THE ROUTES
+app.get("/api/workout", (req, res) => console.log(req.body));
 
 // ==================== START SERVER ====================
 // Section: Connect to the database and start the server
