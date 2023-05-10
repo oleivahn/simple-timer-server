@@ -22,6 +22,10 @@ const {
 const app = express();
 const port = 5000;
 
+//  CHECK THIS
+// Configure middelware to accept access tokens...
+//  https://auth0.com/docs/quickstart/backend/nodejs/01-authorization#configure-the-middleware
+
 // Config Auth0
 const jwtCheck = auth({
   secret: process.env.SECRET,
@@ -45,7 +49,7 @@ app.use(
 );
 
 // enforce on all endpoints
-app.use(jwtCheck);
+// app.use(jwtCheck);
 // app.use(oAuth);
 
 // Section: ROUTES
@@ -59,7 +63,7 @@ app.get("/", (req, res) => {
 
 app.get("/api", (req, res) => {
   console.log("api hit");
-  console.log("Request: ", req.headers);
+  // console.log("Request: ", req.headers);
 
   res.send(data);
 });

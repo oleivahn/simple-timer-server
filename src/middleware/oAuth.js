@@ -4,6 +4,7 @@ const tokenEndpoint = "https://omar-tenant.us.auth0.com/oauth/token";
 
 const oAuth = (req, res, next) => {
   const code = req.headers.authorization;
+  console.log("🚀 ~ file: oAuth.js:7 ~ oAuth ~ code:", code);
 
   axios
     .post(tokenEndpoint, {
@@ -12,7 +13,7 @@ const oAuth = (req, res, next) => {
       client_secret:
         "SQWt8Gdt91yyHYojCcrtW3YoJ8I-xAFEFAETwUIA6gL6lz1zUeXt-fL2NA-jrV4T",
       code: code,
-      redirect_uri: "http://localhost:3000/",
+      redirect_uri: "http://localhost:5173/",
     })
     .then((response) => {
       console.log("Response: ", response.data);
