@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-const { auth } = require("express-oauth2-jwt-bearer");
+const { auth, requiredScopes } = require("express-oauth2-jwt-bearer");
 const { oAuth } = require("./middleware/oAuth");
 const guard = require("express-jwt-permissions")();
 
@@ -61,7 +61,12 @@ app.get("/", (req, res) => {
 // TODO: SWAP THIS TO KEEP TESTING THE FULL ENDPOINT
 // app.get("/api", startWorkoutController);
 
-app.get("/api", (req, res) => {
+const checkScopes = requiredScopes(
+  "read:current_user update:current_user_metadata"
+);
+
+app.get("/api", jwtCheck, (req, res) => {
+  // app.get("/api", jwtCheck, checkScopes, (req, res) => {
   console.log("api hit");
   // console.log("Request: ", req.headers);
 
