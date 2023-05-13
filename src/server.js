@@ -62,7 +62,7 @@ app.get("/", (req, res) => {
 // app.get("/api", startWorkoutController);
 
 const checkScopes = requiredScopes(
-  "read:current_user update:current_user_metadata"
+  "read:current_user update:current_user_metadata read:workouts write:workouts"
 );
 
 app.get("/api", jwtCheck, (req, res) => {
